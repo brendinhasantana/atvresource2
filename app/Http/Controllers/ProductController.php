@@ -17,8 +17,9 @@ class ProductController extends Controller
     {
 
         $products=[
-            ['id'=>1,'nome'=>'Batom'],
-            ['id'=>2,'nome'=>'rimel']
+            ['id'=>1,'nome'=>'Batom','uso'=>'Boca'],
+            ['id'=>2,'nome'=>'Rimel','uso'=>'Olhos'],
+            ['id'=>3,'nome'=>'Blush','uso'=>'Rosto'],
         ];
 
         return view('index',['products'=>$products]);
