@@ -30,7 +30,13 @@ class ProductController extends Controller
      */
     public function create()
     {
-        //
+    
+        $product=[
+            ['id'=>1,'nome'=>'Batom','uso'=>'Boca'],
+            ['id'=>2,'nome'=>'Rimel','uso'=>'Olhos'],
+            ['id'=>3,'nome'=>'Blush','uso'=>'Rosto'],
+        ];
+    return view('create',['product'=>$product]);
     }
 
     /**
@@ -38,7 +44,7 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        return redirect()->route('products.index')->with('msg','Produto '.$request->name. ' criado');
     }
 
     /**
@@ -70,6 +76,6 @@ class ProductController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        return redirect()->route('products.index')->with('msg','Produto'.$id.'exluído');
     }
 }

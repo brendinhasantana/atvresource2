@@ -18,4 +18,5 @@ Route::get('/', function () {
     return redirect('/products');
 });
 
-Route::resource('products', ProductController::class);
+Route::resource('products', ProductController::class)->parameters(['posts' => 'id']);
+
